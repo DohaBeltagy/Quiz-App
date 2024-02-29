@@ -4,7 +4,7 @@ class QuizQuestion {
   final String question;
   final List<String> answers;
 
-  List<String> getShuffled() {
+  List<String> get shuffled {
      final shuffledList = List.of(answers);
      shuffledList.shuffle(); //this is called chaining
     return shuffledList;

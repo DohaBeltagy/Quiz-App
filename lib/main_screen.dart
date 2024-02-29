@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:ui' as ui;
 
 class MainScreen extends StatelessWidget {
   const MainScreen(this.startQuiz,
@@ -12,9 +13,20 @@ class MainScreen extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Text(
+           Text(
             "Quiz Time!!",
-            style: TextStyle(color: Colors.white, fontSize: 30),
+            style: TextStyle(
+            fontSize: 40,
+            foreground: Paint()
+            ..shader = ui.Gradient.linear(
+        const Offset(0, 20),
+        const Offset(450, 20),
+        <Color>[
+         const Color.fromARGB(255, 239, 113, 239),
+         const Color.fromARGB(255, 110, 214, 255),
+        ],
+      )
+  ),
           ),
           const SizedBox(height: 48), //Spacer
           Image.asset(
@@ -28,7 +40,7 @@ class MainScreen extends StatelessWidget {
               onPressed: startQuiz,
               style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.all(16),
-                  foregroundColor: Colors.amber.shade50,
+                  foregroundColor: const Color.fromARGB(255, 193, 175, 235),
                   textStyle: const TextStyle(fontSize: 24)),
               icon: const Icon(Icons.arrow_forward_rounded,
                   color: Color.fromARGB(255, 26, 1, 136)),

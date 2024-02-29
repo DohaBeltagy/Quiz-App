@@ -1,5 +1,5 @@
 import 'package:quizapp/models/quiz_question.dart';
-const q = [
+const questions = [
 QuizQuestion(
   'What are the main building blocks of Flutter UIs?',
   [
